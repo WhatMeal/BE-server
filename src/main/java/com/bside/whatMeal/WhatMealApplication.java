@@ -7,11 +7,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @SpringBootApplication
 public class WhatMealApplication {
-	@RequestMapping("/")
-	@ResponseBody
-	String home() {
-		return "Hello World";
-	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(WhatMealApplication.class, args);
