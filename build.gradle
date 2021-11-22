@@ -31,3 +31,6 @@ dependencies {
 test {
 	useJUnitPlatform()
 }
+bootJar {
+	destinationDirectory = file("./target")
+}
