@@ -1,7 +1,24 @@
 spring:
+<<<<<<< HEAD
   h2:
     console:
       enabled: true
 
   jpa:
     defer-datasource-initialization: true
+=======
+  #h2:
+  #  console:
+  #   enabled: true
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://bfb75e5fbdc46b:0fc64a14@us-cdbr-east-04.cleardb.com/heroku_e0450822ed6def7?reconnect=true
+    username: bfb75e5fbdc46b
+    password: 0fc64a14
+  jpa:
+    defer-datasource-initialization: true
+
+server:
+  port: 80
+>>>>>>> 43fd4f5521ad7a995b1a26e6e1c81d5526f754ce
