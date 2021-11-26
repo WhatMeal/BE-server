@@ -20,4 +20,5 @@ public class Basic {
     private Long id;
 
     private String basic;
+    private String soup;
 }
