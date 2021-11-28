@@ -25,6 +25,5 @@ public class FoodController {
         //신규 음식 추가 -> 사용자가 요청으로 넣은 음식 검토 후 추가 진행
         //admin으로 옮겨야하는 기능
         foodService.postFood(reqDto);
-
     }
 }

@@ -4,19 +4,20 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class State {
+public class FoodCook {
+    //음식 이름과 조리 방식 선택 관계 테이블
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String state;
+    @ManyToOne
+    private Food food;
+    @ManyToOne
+    private Cook cook;
 }
