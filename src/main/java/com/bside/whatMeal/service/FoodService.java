@@ -10,8 +10,6 @@ import com.bside.whatMeal.dto.FoodPostReqDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-
 @Service
 @RequiredArgsConstructor
 public class FoodService {
@@ -24,7 +22,7 @@ public class FoodService {
 //        ArrayList<Long> basicList = reqDto.getBasic();
         //Food table에 음식 이름 추가
         Food newFood = new Food();
-        newFood.setName(reqDto.getFood());
+        newFood.setFood(reqDto.getFood());
         newFood = foodRepository.save(newFood);
 
 //        없을 경우의 exception 처리 필요

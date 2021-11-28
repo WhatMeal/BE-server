@@ -16,6 +16,6 @@ public class Food {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
-    private int soup;
+    private String food;
+    private String soup;
 }
