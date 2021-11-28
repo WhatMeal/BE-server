@@ -17,7 +17,7 @@ public class FoodController {
     private final FoodService foodService;
 
     public void getFoodList(){
-        //조건에 맞는 음식 추천 리스트(5개씩) 가져오기
+        //조건에 맞는 음식 추천 리스트(5개씩) 가져오기 >> paging 사용
     }
 
     @PostMapping("/postNewFood")

@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 public class BasicService {
     private final BasicRepository basicRepository;
 
-    public void postBasic(BasicPostReqDto reqDto){
+    public void addBasic(BasicPostReqDto reqDto){
         //basic 테이블에 데이터 추가
         Basic new_basic = new Basic();
         new_basic.setBasic(reqDto.getBasic());
