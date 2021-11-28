@@ -18,6 +18,9 @@ spring:
     password: i7no59j4dm57dp97
   jpa:
     defer-datasource-initialization: true
+    properties:
+      hibernate:
+        show_sql: true
 
 server:
   port: 80
