@@ -1,12 +1,12 @@
 spring:
-<<<<<<< HEAD
-  h2:
-    console:
-      enabled: true
-
-  jpa:
-    defer-datasource-initialization: true
-=======
+#<<<<<<< HEAD
+#  h2:
+#    console:
+#      enabled: true
+#
+#  jpa:
+#    defer-datasource-initialization: true
+#=======
   #h2:
   #  console:
   #   enabled: true
@@ -21,4 +21,4 @@ spring:
 
 server:
   port: 80
->>>>>>> 43fd4f5521ad7a995b1a26e6e1c81d5526f754ce
+#>>>>>>> 43fd4f5521ad7a995b1a26e6e1c81d5526f754ce

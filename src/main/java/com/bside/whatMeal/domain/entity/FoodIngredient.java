@@ -17,7 +17,9 @@ public class FoodIngredient {
     private Long id;
 
     @ManyToOne
+    @JoinColumn(name = "food_id")
     private Food food;
     @ManyToOne
+    @JoinColumn(name = "ingredient_id")
     private Ingredient ingredient;
 }
