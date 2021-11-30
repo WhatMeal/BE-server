@@ -1,4 +1,12 @@
 spring:
+#<<<<<<< HEAD
+#  h2:
+#    console:
+#      enabled: true
+#
+#  jpa:
+#    defer-datasource-initialization: true
+#=======
   #h2:
   #  console:
   #   enabled: true
@@ -10,6 +18,10 @@ spring:
     password: i7no59j4dm57dp97
   jpa:
     defer-datasource-initialization: true
+    properties:
+      hibernate:
+        show_sql: true
 
 server:
   port: 80
+#>>>>>>> 43fd4f5521ad7a995b1a26e6e1c81d5526f754ce

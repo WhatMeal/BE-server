@@ -7,11 +7,11 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Entity
-public class FoodBasic {
-    //음식 이름과 기본 선택 관계 테이블
+public class FoodIngredient {
+    //음식 이름과 주재료 선택 관계 테이블
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -20,6 +20,6 @@ public class FoodBasic {
     @JoinColumn(name = "food_id")
     private Food food;
     @ManyToOne
-    @JoinColumn(name = "basic_id")
-    private Basic basic;
+    @JoinColumn(name = "ingredient_id")
+    private Ingredient ingredient;
 }
