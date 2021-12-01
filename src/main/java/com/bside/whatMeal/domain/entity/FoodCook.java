@@ -14,7 +14,7 @@ public class FoodCook {
     //음식 이름과 조리 방식 선택 관계 테이블
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
 
     @ManyToOne
     @JoinColumn(name = "food_id")
