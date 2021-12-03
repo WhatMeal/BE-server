@@ -16,7 +16,7 @@ import javax.persistence.Id;
 public class State {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
 
     private String state;
 }

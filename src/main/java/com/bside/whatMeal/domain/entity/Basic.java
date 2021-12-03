@@ -17,7 +17,7 @@ public class Basic {
     //기본 선택 관련 : 밥, 면, 빵
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
 
     private String basic;
 }

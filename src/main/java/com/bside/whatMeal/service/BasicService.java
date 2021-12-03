@@ -15,8 +15,7 @@ public class BasicService {
     private final BasicRepository basicRepository;
 
     public List<Basic> getBasic() {
-        List<Basic> basics = new ArrayList<>();
-        basics = basicRepository.findAll();
+        List<Basic> basics = basicRepository.findAll();
 
         return basics;
     }

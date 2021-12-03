@@ -14,7 +14,8 @@ public class FoodIngredient {
     //음식 이름과 주재료 선택 관계 테이블
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+
+    private int id;
 
     @ManyToOne
     @JoinColumn(name = "food_id")

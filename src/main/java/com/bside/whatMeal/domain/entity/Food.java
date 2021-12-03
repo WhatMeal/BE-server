@@ -14,7 +14,7 @@ public class Food {
     //음식 이름
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
 
     private String food;
     private String soup;
