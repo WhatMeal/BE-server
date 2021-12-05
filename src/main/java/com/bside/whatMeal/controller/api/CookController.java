@@ -23,9 +23,9 @@ public class CookController {
     }
 
     @PostMapping()
-    public void postCook(@RequestBody CookPostReqDto reqDto){
+    public void addCook(@RequestBody CookPostReqDto reqDto){
         //조리 종류 선택지를 추가하는 API
         //
-        cookService.postCook(reqDto);
+        cookService.addCook(reqDto);
     }
 }

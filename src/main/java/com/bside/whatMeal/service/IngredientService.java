@@ -19,7 +19,7 @@ public class IngredientService {
         return ingredientRepository.findAll();
     }
 
-    public void postIngredient(IngredientPostReqDto reqDto) {
+    public void addIngredient(IngredientPostReqDto reqDto) {
         Ingredient new_ingredient = new Ingredient();
         new_ingredient.setIngredient(reqDto.getIngredient());
 

@@ -18,7 +18,7 @@ public class CookService {
         return cookRepository.findAll();
     }
 
-    public void postCook(CookPostReqDto reqDto) {
+    public void addCook(CookPostReqDto reqDto) {
         cookRepository.save(Cook.builder().cook(reqDto.getCook()).build());
     }
 }
