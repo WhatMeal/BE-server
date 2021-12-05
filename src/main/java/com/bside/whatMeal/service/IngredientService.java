@@ -2,7 +2,7 @@ package com.bside.whatMeal.service;
 
 import com.bside.whatMeal.domain.entity.Ingredient;
 import com.bside.whatMeal.domain.repository.IngredientRepository;
-import com.bside.whatMeal.dto.IngredientPostReqDto;
+import com.bside.whatMeal.dto.reqdto.IngredientPostReqDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

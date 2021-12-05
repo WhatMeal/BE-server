@@ -2,7 +2,7 @@ package com.bside.whatMeal.controller.api;
 
 
 import com.bside.whatMeal.domain.entity.Ingredient;
-import com.bside.whatMeal.dto.IngredientPostReqDto;
+import com.bside.whatMeal.dto.reqdto.IngredientPostReqDto;
 import com.bside.whatMeal.service.IngredientService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;

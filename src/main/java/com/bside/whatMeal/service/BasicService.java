@@ -2,11 +2,10 @@ package com.bside.whatMeal.service;
 
 import com.bside.whatMeal.domain.entity.Basic;
 import com.bside.whatMeal.domain.repository.BasicRepository;
-import com.bside.whatMeal.dto.BasicPostReqDto;
+import com.bside.whatMeal.dto.reqdto.BasicPostReqDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service

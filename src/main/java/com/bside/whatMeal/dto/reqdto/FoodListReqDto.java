@@ -1,4 +1,4 @@
-package com.bside.whatMeal.dto;
+package com.bside.whatMeal.dto.reqdto;
 
 import java.util.ArrayList;
 

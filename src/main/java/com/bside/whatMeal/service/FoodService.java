@@ -6,7 +6,7 @@ import com.bside.whatMeal.domain.entity.FoodBasic;
 import com.bside.whatMeal.domain.repository.BasicRepository;
 import com.bside.whatMeal.domain.repository.FoodBasicRepository;
 import com.bside.whatMeal.domain.repository.FoodRepository;
-import com.bside.whatMeal.dto.FoodPostReqDto;
+import com.bside.whatMeal.dto.reqdto.FoodPostReqDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.bside.whatMeal.dto;
+package com.bside.whatMeal.dto.resdto;
 
 public class FoodListResDto {
     //사용자가 요청한 정보 기반으로 산출된 음식 리스트를 반환하는 dto
