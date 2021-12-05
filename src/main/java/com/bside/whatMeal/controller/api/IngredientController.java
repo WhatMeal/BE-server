@@ -13,6 +13,7 @@ import java.util.List;
 @RequestMapping("/ingredients")
 @RequiredArgsConstructor
 public class IngredientController {
+    //TODO: delete, modify api
 
     private final IngredientService ingredientService;
 
