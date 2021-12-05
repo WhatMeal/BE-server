@@ -22,7 +22,6 @@ public class FoodService {
 //        ArrayList<Long> basicList = reqDto.getBasic();
         //Food table에 음식 이름 추가
         Food newFood = new Food();
-        newFood.setFood(reqDto.getFood());
         newFood = foodRepository.save(newFood);
 
 //        없을 경우의 exception 처리 필요
