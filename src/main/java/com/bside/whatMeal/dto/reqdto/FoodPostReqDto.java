@@ -1,4 +1,4 @@
-package com.bside.whatMeal.dto;
+package com.bside.whatMeal.dto.reqdto;
 
 import lombok.Getter;
 
@@ -10,7 +10,7 @@ public class FoodPostReqDto {
     private String food;
 //    private ArrayList<Long> basic;
     //일단 basic을 한 번에 한 개씩만 입력 받을 수 있다고 가정 -> 추후 여러개로 변동
-    private Long basic;
+    private Integer basic;
 
     //추후 추가될 카테고리들
 //    private String soup;

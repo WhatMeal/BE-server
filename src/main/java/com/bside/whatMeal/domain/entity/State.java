@@ -1,6 +1,7 @@
 package com.bside.whatMeal.domain.entity;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -10,13 +11,18 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
 @Entity
 public class State {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private String state;
+
+    @Builder
+    public State(int id, String state){
+        this.id = id;
+        this.state = state;
+    }
 }

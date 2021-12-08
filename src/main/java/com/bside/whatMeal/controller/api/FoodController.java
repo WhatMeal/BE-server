@@ -1,7 +1,6 @@
 package com.bside.whatMeal.controller.api;
 
-import com.bside.whatMeal.dto.FoodListReqDto;
-import com.bside.whatMeal.dto.FoodPostReqDto;
+import com.bside.whatMeal.dto.reqdto.FoodPostReqDto;
 import com.bside.whatMeal.service.FoodService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;

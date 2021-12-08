@@ -6,7 +6,7 @@ import com.bside.whatMeal.domain.entity.FoodBasic;
 import com.bside.whatMeal.domain.repository.BasicRepository;
 import com.bside.whatMeal.domain.repository.FoodBasicRepository;
 import com.bside.whatMeal.domain.repository.FoodRepository;
-import com.bside.whatMeal.dto.FoodPostReqDto;
+import com.bside.whatMeal.dto.reqdto.FoodPostReqDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +22,6 @@ public class FoodService {
 //        ArrayList<Long> basicList = reqDto.getBasic();
         //Food table에 음식 이름 추가
         Food newFood = new Food();
-        newFood.setFood(reqDto.getFood());
         newFood = foodRepository.save(newFood);
 
 //        없을 경우의 exception 처리 필요
