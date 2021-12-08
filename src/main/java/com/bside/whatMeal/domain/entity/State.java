@@ -21,7 +21,8 @@ public class State {
     private String state;
 
     @Builder
-    public State(String state){
+    public State(int id, String state){
+        this.id = id;
         this.state = state;
     }
 }

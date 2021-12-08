@@ -22,7 +22,8 @@ public class Cook {
     private String cook;
 
     @Builder
-    public Cook(String cook){
+    public Cook(int id, String cook){
+        this.id = id;
         this.cook = cook;
     }
 }
