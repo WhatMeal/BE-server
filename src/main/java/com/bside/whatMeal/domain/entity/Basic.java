@@ -16,7 +16,7 @@ import javax.persistence.Id;
 public class Basic {
     //기본 선택 관련 : 밥, 면, 빵
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private String basic;

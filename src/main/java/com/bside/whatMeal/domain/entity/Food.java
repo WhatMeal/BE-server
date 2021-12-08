@@ -13,7 +13,7 @@ import javax.persistence.*;
 public class Food {
     //음식 이름
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private String food;
