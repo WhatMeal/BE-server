@@ -27,6 +27,7 @@ public class FoodController {
         //basic은 최대 2개까지
         //soup, ingredient, state 0-2개
         //내용값이 아닌 id 값을 받아옴
+        //pagination해서 내려줄 것이므로 page 필요
     }
 
     @PostMapping()
