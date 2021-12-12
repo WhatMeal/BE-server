@@ -20,9 +20,6 @@ public class IngredientService {
     }
 
     public void addIngredient(IngredientPostReqDto reqDto) {
-        Ingredient new_ingredient = new Ingredient();
-        new_ingredient.setIngredient(reqDto.getIngredient());
-
-        ingredientRepository.save(new_ingredient);//값 저장
+        ingredientRepository.save(Ingredient.builder().id(reqDto.getId()).ingredient(reqDto.getIngredient()).build());
     }
 }

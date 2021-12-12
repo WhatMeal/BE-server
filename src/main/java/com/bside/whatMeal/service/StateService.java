@@ -21,6 +21,6 @@ public class StateService {
 
     @PostMapping()
     public void addState(StatePostReqDto reqDto){
-        stateRepository.save(State.builder().state(reqDto.getState()).build());
+        stateRepository.save(State.builder().id(reqDto.getId()).state(reqDto.getState()).build());
     }
 }

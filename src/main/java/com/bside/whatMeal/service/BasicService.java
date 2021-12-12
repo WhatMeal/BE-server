@@ -21,9 +21,7 @@ public class BasicService {
 
     public void addBasic(BasicPostReqDto reqDto){
         //basic 테이블에 데이터 추가
-        Basic new_basic = new Basic();
-        new_basic.setBasic(reqDto.getBasic());
-        basicRepository.save(new_basic); //basic의 값 저장
+        basicRepository.save(Basic.builder().id(reqDto.getId()).basic(reqDto.getBasic()).build());
     }
 
 }
