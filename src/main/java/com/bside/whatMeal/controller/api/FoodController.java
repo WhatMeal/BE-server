@@ -28,6 +28,7 @@ public class FoodController {
         //soup, ingredient, state 0-2개
         //내용값이 아닌 id 값을 받아옴
         //pagination해서 내려줄 것이므로 page 필요
+        foodService.getFoodList(basic, soup, cook, ingredient, state, page);
     }
 
     @PostMapping()
