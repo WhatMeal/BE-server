@@ -2,9 +2,7 @@ package com.bside.whatMeal.service;
 
 import com.bside.whatMeal.domain.entity.Basic;
 import com.bside.whatMeal.domain.entity.Food;
-import com.bside.whatMeal.domain.entity.FoodBasic;
 import com.bside.whatMeal.domain.repository.BasicRepository;
-import com.bside.whatMeal.domain.repository.FoodBasicRepository;
 import com.bside.whatMeal.domain.repository.FoodRepository;
 import com.bside.whatMeal.dto.reqdto.FoodPostReqDto;
 import lombok.RequiredArgsConstructor;
@@ -19,7 +17,6 @@ public class FoodService {
 
     private final FoodRepository foodRepository;
     private final BasicRepository basicRepository;
-    private final FoodBasicRepository foodBasicRepository;
 
     public void getFoodList(List<Integer> basic,
                             int soup,
@@ -42,9 +39,5 @@ public class FoodService {
         Basic basic = basicRepository.findById(reqDto.getBasic()).orElse(null);
 
         //추가된 내용 관계 테이블에 추가
-        FoodBasic newFoodBasic = new FoodBasic();
-        newFoodBasic.setFood(newFood);
-        newFoodBasic.setBasic(basic);
-        foodBasicRepository.save(newFoodBasic);
     }
 }
