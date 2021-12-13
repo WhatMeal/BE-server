@@ -10,6 +10,9 @@ import com.bside.whatMeal.dto.reqdto.FoodPostReqDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
+
 @Service
 @RequiredArgsConstructor
 public class FoodService {
@@ -17,6 +20,17 @@ public class FoodService {
     private final FoodRepository foodRepository;
     private final BasicRepository basicRepository;
     private final FoodBasicRepository foodBasicRepository;
+
+    public void getFoodList(List<Integer> basic,
+                            int soup,
+                            List<Integer> cook,
+                            List<Integer> ingredient,
+                            List<Integer> state,
+                            int page){
+        //cook, ingredient, state는 없는 경우 존재
+        //없는 경우에는 전부로 해당됨
+        //조인 필요한 테이블 : food - basic - cook - ingredient- state
+    }
 
     public void postFood(FoodPostReqDto reqDto){
 //        ArrayList<Long> basicList = reqDto.getBasic();
