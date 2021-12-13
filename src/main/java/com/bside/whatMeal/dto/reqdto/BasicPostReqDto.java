@@ -5,5 +5,6 @@ import lombok.Getter;
 @Getter
 public class BasicPostReqDto {
     //basic에 넣은 값을 보내는 DTO
+    private int id;
     private String basic;
 }

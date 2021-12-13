@@ -20,7 +20,7 @@ public class BasicController {
         return basicService.getBasic();
     }
 
-    @PostMapping("/add_basic")
+    @PostMapping()
     public void addBasic(@RequestBody BasicPostReqDto reqDto){
         basicService.addBasic(reqDto);
     }
