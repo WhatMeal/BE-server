@@ -16,19 +16,19 @@ public class FoodController {
     private final FoodService foodService;
 
     @GetMapping()
-    public FoodListResDto getFoodList(@RequestParam List<Integer> basic,
+    public FoodListResDto getFoodList(@RequestParam List<Integer> basics,
                                       @RequestParam String soup,
-                                      @RequestParam List<Integer> cook,
-                                      @RequestParam List<Integer> ingredient,
-                                      @RequestParam List<Integer> state,
-                                      @RequestParam int page){
+                                      @RequestParam List<Integer> cooks,
+                                      @RequestParam List<Integer> ingredients,
+                                      @RequestParam List<Integer> states,
+                                      @RequestParam int pages){
         //조건에 맞는 음식 추천 리스트(5개씩) 가져오기 >> paging 사용
         //basic, soup는 필수값
         //basic은 최대 2개까지
         //soup, ingredient, state 0-2개
         //내용값이 아닌 id 값을 받아옴
         //pagination해서 내려줄 것이므로 page 필요
-        return foodService.getFoodList(basic, soup, cook, ingredient, state, page);
+        return foodService.getFoodList(basics, soup, cooks, ingredients, states, pages);
     }
 
     @PostMapping()
