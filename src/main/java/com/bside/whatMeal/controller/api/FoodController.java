@@ -1,6 +1,5 @@
 package com.bside.whatMeal.controller.api;
 
-import com.bside.whatMeal.domain.entity.Food;
 import com.bside.whatMeal.dto.reqdto.FoodPostReqDto;
 import com.bside.whatMeal.dto.resdto.FoodListResDto;
 import com.bside.whatMeal.service.FoodService;

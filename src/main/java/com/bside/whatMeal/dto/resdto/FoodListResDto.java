@@ -15,12 +15,12 @@ public class FoodListResDto {
 
     private List<String> food;
     private int page; //현재 페이지
-    private int total_page; //전체 페이지 수
+    private boolean has_next; //전체 페이지 수
 
     @Builder
-    public FoodListResDto(List<String> food, int page, int total_page){
+    public FoodListResDto(List<String> food, int page, boolean has_next){
         this.food = food;
         this.page = page;
-        this.total_page = total_page;
+        this.has_next = has_next;
     }
 }

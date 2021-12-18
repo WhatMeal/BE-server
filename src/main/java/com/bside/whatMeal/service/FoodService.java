@@ -6,6 +6,8 @@ import com.bside.whatMeal.dto.reqdto.FoodPostReqDto;
 import com.bside.whatMeal.dto.resdto.FoodListResDto;
 import com.bside.whatMeal.utils.FoodMapping;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -27,18 +29,17 @@ public class FoodService {
                                             List<Integer> ingredients,
                                             List<Integer> states,
                                             int page){
-        //cook, ingredient, state는 없는 경우 존재
-        //없는 경우에는 전부로 해당됨 -> 조건에서 빼놓고 진행하기 or 모든 값 다 넣어주기? -> 선택 안하면 모든 값 다 보내주기
+        //없는 경우에는 전부로 해당됨 -> 조건에서 빼놓고 진행하기 or 모든 값 다 넣어주기? -> 선택 안하면 모든 값 다 보내주기(FE)
         //조인 필요한 테이블 : food - basic - cook - ingredient- state
         //pagination 진행
-        List<FoodMapping> foods =
-                foodRepository.findDistinctAllBySoupAndBasicsIdInAndCooksIdInAndIngredientsIdInAndStatesIdIn(soup, basics, cooks, ingredients, states);
-        List<String> rf = new ArrayList<>();
-        for(FoodMapping food: foods){
-            System.out.println(food.getFood());
-            rf.add(food.getFood());
-        }
-        return new FoodListResDto(rf, 0, 0);
+        PageRequest pageRequest = PageRequest.of(page - 1, 5);
+        //DB로부터 정보 받아오기
+        Page<FoodMapping> result =
+                foodRepository.findDistinctAllBySoupAndBasicsIdInAndCooksIdInAndIngredientsIdInAndStatesIdIn(
+                        pageRequest, soup, basics, cooks, ingredients, states);
+        List<String> foods = new ArrayList<>();
+        result.getContent().forEach(food -> foods.add(food.getFood()));
+        return new FoodListResDto(foods, page, result.hasNext());
     }
 
     public void postFood(FoodPostReqDto reqDto){
