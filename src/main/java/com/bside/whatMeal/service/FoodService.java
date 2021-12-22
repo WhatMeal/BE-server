@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,6 +43,7 @@ public class FoodService {
         return new FoodListResDto(foods, page, result.hasNext());
     }
 
+    @Transactional
     public void postFood(FoodPostReqDto reqDto){
 //        ArrayList<Long> basicList = reqDto.getBasic();
         //Food table에 음식 이름 추가

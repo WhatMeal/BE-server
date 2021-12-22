@@ -7,6 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
@@ -19,7 +20,7 @@ public class StateService {
         return stateRepository.findAll();
     }
 
-    @PostMapping()
+    @Transactional
     public void addState(StatePostReqDto reqDto){
         stateRepository.save(State.builder().id(reqDto.getId()).state(reqDto.getState()).build());
     }
