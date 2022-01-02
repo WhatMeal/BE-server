@@ -6,4 +6,6 @@ import lombok.Getter;
 public class InfoFinalFoodPostReqDto {
     private int id;
     private String foodName;
+    private String x;
+    private String y;
 }
