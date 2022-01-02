@@ -9,6 +9,7 @@ import com.bside.whatMeal.service.InfoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 @RestController
@@ -31,7 +32,7 @@ public class InfoController {
 
     @PutMapping("/finalfood")
     //최종 음식 정한 후 음식 추가 info
-    public PostResultResDto addInfoFinalFood(@RequestBody InfoFinalFoodPostReqDto reqDto) {
+    public PostResultResDto addInfoFinalFood(@RequestBody InfoFinalFoodPostReqDto reqDto) throws UnsupportedEncodingException {
         return infoService.addInfoFinalFood(reqDto);
     }
 }
