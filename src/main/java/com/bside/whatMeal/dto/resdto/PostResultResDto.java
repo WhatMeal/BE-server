@@ -6,5 +6,5 @@ import lombok.Setter;
 @Getter
 @Setter
 public class PostResultResDto {
-    private String result;
+    private String url;
 }
