@@ -16,14 +16,14 @@ public class Info {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private int age; //나이대
+    private String age; //나이대
     private String mealTime; //식사시간(아침, 점심, 저녁)
     private String standard1; //메뉴 선정 기준1
     private String standard2; //메뉴 선정 기준2
     private String foodName; //최종 선택한 음식
 
     @Builder(builderClassName = "onboarding", builderMethodName = "onboarding")
-    public Info(int age, String mealTime, String standard1, String standard2){
+    public Info(String age, String mealTime, String standard1, String standard2){
         this.age = age;
         this.mealTime = mealTime;
         this.standard1 = standard1;
