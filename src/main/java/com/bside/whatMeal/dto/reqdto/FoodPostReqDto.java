@@ -13,4 +13,6 @@ public class FoodPostReqDto {
     private List<Integer> cooks; //조리 방법
     private List<Integer> ingredients; //재료
     private List<Integer> states; //상태
+
+    private String imgSrc; //음식 이미지 url
 }
