@@ -1,6 +1,5 @@
 package com.bside.whatMeal.domain.entity;
 
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,6 +19,7 @@ public class Food {
 
     private String food;
     private String soup;
+    private String imgSrc;
 
     @ManyToMany
     @JoinTable(name = "FoodBasic",
@@ -66,8 +66,9 @@ public class Food {
     }
 
     @Builder
-    public Food(String food, String soup){
+    public Food(String food, String soup, String imgSrc){
         this.food = food;
         this.soup = soup;
+        this.imgSrc = imgSrc;
     }
 }

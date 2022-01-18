@@ -5,6 +5,7 @@ import com.bside.whatMeal.domain.repository.IngredientRepository;
 import com.bside.whatMeal.dto.reqdto.IngredientPostReqDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -19,6 +20,7 @@ public class IngredientService {
         return ingredientRepository.findAll();
     }
 
+    @Transactional
     public void addIngredient(IngredientPostReqDto reqDto) {
         ingredientRepository.save(Ingredient.builder().id(reqDto.getId()).ingredient(reqDto.getIngredient()).build());
     }

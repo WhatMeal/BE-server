@@ -5,6 +5,7 @@ import com.bside.whatMeal.domain.repository.CookRepository;
 import com.bside.whatMeal.dto.reqdto.CookPostReqDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -18,6 +19,7 @@ public class CookService {
         return cookRepository.findAll();
     }
 
+    @Transactional
     public void addCook(CookPostReqDto reqDto) {
         cookRepository.save(Cook.builder().id(reqDto.getId()).cook(reqDto.getCook()).build());
     }

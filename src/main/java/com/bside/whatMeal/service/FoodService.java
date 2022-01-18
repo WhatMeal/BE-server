@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,15 +38,20 @@ public class FoodService {
         Page<FoodMapping> result =
                 foodRepository.findDistinctAllBySoupAndBasicsIdInAndCooksIdInAndIngredientsIdInAndStatesIdIn(
                         pageRequest, soup, basics, cooks, ingredients, states);
-        List<String> foods = new ArrayList<>();
-        result.getContent().forEach(food -> foods.add(food.getFood()));
-        return new FoodListResDto(foods, page, result.hasNext());
+
+        List<FoodListResDto.ResFood> resFoods = new ArrayList<>();
+        result.getContent().forEach(food -> resFoods.add(new FoodListResDto.ResFood(food.getFood(), food.getImgSrc())));
+        return new FoodListResDto(resFoods, page, result.hasNext());
     }
 
+    @Transactional
     public void postFood(FoodPostReqDto reqDto){
 //        ArrayList<Long> basicList = reqDto.getBasic();
         //Food table에 음식 이름 추가
-        Food newFood = Food.builder().food(reqDto.getFood()).soup(reqDto.getSoup()).build();
+        Food newFood = Food.builder().food(reqDto.getFood())
+                .soup(reqDto.getSoup())
+                .imgSrc(reqDto.getImgSrc())
+                .build();
 //        newFood = foodRepository.save(newFood);
         //TODO: 없을 경우의 exception 처리 필요
         reqDto.getBasics().forEach(basic -> newFood.addBasic(basicRepository.findById(basic).orElse(null)));
