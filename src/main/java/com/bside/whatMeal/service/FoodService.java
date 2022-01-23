@@ -4,6 +4,7 @@ import com.bside.whatMeal.domain.entity.Food;
 import com.bside.whatMeal.domain.repository.*;
 import com.bside.whatMeal.dto.reqdto.FoodPostReqDto;
 import com.bside.whatMeal.dto.resdto.FoodListResDto;
+import com.bside.whatMeal.exceptions.MethodNotExistException;
 import com.bside.whatMeal.utils.FoodMapping;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -54,10 +55,14 @@ public class FoodService {
                 .build();
 //        newFood = foodRepository.save(newFood);
         //TODO: 없을 경우의 exception 처리 필요
-        reqDto.getBasics().forEach(basic -> newFood.addBasic(basicRepository.findById(basic).orElse(null)));
-        reqDto.getCooks().forEach(cook -> newFood.addCook(cookRepository.findById(cook).orElse(null)));
-        reqDto.getIngredients().forEach(ingredient -> newFood.addIngredient(ingredientRepository.findById(ingredient).orElse(null)));
-        reqDto.getStates().forEach(state -> newFood.addState(stateRepository.findById(state).orElse(null)));
+        reqDto.getBasics().forEach(basic -> newFood.addBasic(basicRepository.findById(basic)
+                .orElseThrow(() -> MethodNotExistException.builder().message("존재하지 않는 기본 선택지입니다.").build())));
+        reqDto.getCooks().forEach(cook -> newFood.addCook(cookRepository.findById(cook)
+                .orElseThrow(() -> MethodNotExistException.builder().message("존재하지 않는 조리법 선택지입니다.").build())));
+        reqDto.getIngredients().forEach(ingredient -> newFood.addIngredient(ingredientRepository.findById(ingredient)
+                .orElseThrow(() -> MethodNotExistException.builder().message("존재하지 않는 재료 선택지입니다.").build())));
+        reqDto.getStates().forEach(state -> newFood.addState(stateRepository.findById(state)
+                .orElseThrow(() -> MethodNotExistException.builder().message("존재하지 않는 상태 선택지입니다.").build())));
 
         foodRepository.save(newFood);
     }
