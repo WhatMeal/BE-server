@@ -47,14 +47,12 @@ public class FoodService {
 
     @Transactional
     public void postFood(FoodPostReqDto reqDto){
-//        ArrayList<Long> basicList = reqDto.getBasic();
         //Food table에 음식 이름 추가
         Food newFood = Food.builder().food(reqDto.getFood())
                 .soup(reqDto.getSoup())
                 .imgSrc(reqDto.getImgSrc())
                 .build();
-//        newFood = foodRepository.save(newFood);
-        //TODO: 없을 경우의 exception 처리 필요
+
         reqDto.getBasics().forEach(basic -> newFood.addBasic(basicRepository.findById(basic)
                 .orElseThrow(() -> MethodNotExistException.builder().message("존재하지 않는 기본 선택지입니다.").build())));
         reqDto.getCooks().forEach(cook -> newFood.addCook(cookRepository.findById(cook)
